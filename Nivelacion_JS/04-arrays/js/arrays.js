@@ -31,4 +31,4 @@ const nuevo=numbers.map((num)=>num+1
 );
 document.write("</ul>");
 document.write(nuevo+"<br>");
-document.write(numbers);
+document.write(numbers+"<br>");
