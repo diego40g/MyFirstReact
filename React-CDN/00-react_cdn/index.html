@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react-cdn</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+    <h1>React con CDN</h1>
+
+    <div id="root">
+        <ol>
+            <li>manzana</li>
+            <li>pera</li>
+            <li>melon</li>
+            <li>sandia</li>
+        </ol>
+    </div>
+
+    <script>
+        console.log(React);
+        console.log(ReactDOM);
+
+        ReactDOM.render(React.createElement("h1", null, "Hola Diego"), document.getElementById("root"));
+
+        //Creacion de listas sin jsx
+        ReactDOM.render(
+            React.createElement(
+                "ol",
+                null,
+                React.createElement("li",null,"uva"),    
+                React.createElement("li",null,"limon"),    
+                React.createElement("li",null,"mango")    
+            ),
+            document.getElementById("root")
+        )
+
+    </script>
+</body>
+</html>
