@@ -34,3 +34,17 @@ self.addEventListener("activate",(e)=>{
         }).then(() => self.clients.claim())
     );
 })
+
+self.addEventListener("fetch",(e)=>{
+    //console.log(e);
+    //console.log(e.request);
+    e.respondWith(()=>{
+        //caches.match(e.request).then((res)=>(res ? res : fetch(e.request)));
+        caches.match(e.request).then((res)=>{
+            if (res){
+                return res;
+            }
+            return fetch(e.request);
+        })
+    })
+})
