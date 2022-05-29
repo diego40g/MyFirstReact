@@ -8,4 +8,16 @@ const CACHE_ELEMENTS=[
     "./components/Contador.js"
 ]
 
-const CACHE_NAME="v1_cache_contador_react"
+const CACHE_NAME="v1_cache_contador_react";
+
+/*self es igual a this*/
+self.addEventListener("install", (e)=> {
+    //console.log(e);
+    e.waitUntil(
+        caches.open(CACHE_NAME).then(cache => {
+            cache.addAll(CACHE_ELEMENTS).then(()=>{
+                self.skipWaiting()
+            }).catch(console.log)
+        })
+    )
+});
