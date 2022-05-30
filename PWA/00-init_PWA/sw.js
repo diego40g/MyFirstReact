@@ -38,7 +38,7 @@ self.addEventListener("activate",(e)=>{
 self.addEventListener("fetch",(e)=>{
     //console.log(e);
     //console.log(e.request);
-    e.respondWith(()=>{
+    e.respondWith(
         //caches.match(e.request).then((res)=>(res ? res : fetch(e.request)));
         caches.match(e.request).then((res)=>{
             if (res){
@@ -46,5 +46,5 @@ self.addEventListener("fetch",(e)=>{
             }
             return fetch(e.request);
         })
-    })
-})
+    );
+});
