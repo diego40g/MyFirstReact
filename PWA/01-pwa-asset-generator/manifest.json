@@ -1,0 +1,38 @@
+{
+  "name": "Mi primer PWA con ReactJs",
+  "short_name": "PWA con React (nombre moviles)",
+  "description": "Contador app hecho con React para aprender PWA",
+  "background_color": "#333333",
+  "theme_color": "#333333",
+  "start_url": "./",
+  "scope": "./",
+  "lang": "es-EC",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
