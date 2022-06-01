@@ -6,7 +6,7 @@ const App = () => {
     <div>
       <h1>Hola Diego</h1>
       <Contador/>
-      <MiContador/>
+      <MiContador inicial={0} factor={3}/>
     </div>
   );
 };
