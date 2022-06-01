@@ -34,7 +34,15 @@ const Cards =()=> {
   return (
     <>
         {data.map(({lang,url,fcolor,scolor})=>{
-            return <Card key={lang} lang={lang} img={url} fcolor={fcolor} scolor={scolor} />
+            return (
+                <Card 
+                    key={lang}
+                    lang={lang}
+                    img={url}
+                    fcolor={fcolor}
+                    scolor={scolor}
+                />
+            )
         })}
     </>
   )

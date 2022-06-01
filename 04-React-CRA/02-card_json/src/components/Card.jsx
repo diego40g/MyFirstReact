@@ -8,7 +8,10 @@ console.log(PropTypes)
 const Card = ({lang,img,fcolor,scolor}) => {
   return (
     <section>
-        <div className="card-container">
+        <div className="card-container" 
+        style={{
+            background: `linear-gradient(to left, ${fcolor}, ${scolor})`,
+        }}>
             <img src={img} alt="lang.svg" />
             <h3>{lang}</h3>
         </div>
