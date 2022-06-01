@@ -33,9 +33,9 @@ const Cards =()=> {
   console.log(data)
   return (
     <>
-        <Card/>
-        <Card/>
-        <Card/>
+        {data.map(({lang,url,fcolor,scolor})=>{
+            return <Card key={lang} lang={lang} img={url} />
+        })}
     </>
   )
 }
