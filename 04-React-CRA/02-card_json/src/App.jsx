@@ -1,9 +1,9 @@
-import Card from "./components/Card";
+import Cards from "./components/Cards";
 const App =()=> {
   return (
     <div>
       <h1>Project Card</h1>
-      <Card />
+      <Cards />
     </div>
   )
 }

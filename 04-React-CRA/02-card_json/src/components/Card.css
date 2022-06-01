@@ -1,3 +1,12 @@
 .card-container{
-    border: 3px solid #000;
+    border: 3px solid #fff;
+    display: flex;
+    width: 10rem;
+    margin: 1.5rem 3rem;
+    border-radius: 0.4rem;
+    box-shadow: 0.125rem 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 128);
+}
+img{
+    width: 3rem;
+    padding: 0.5rem 1rem;
 }
