@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
+import PropTypes, { number } from 'prop-types';
+
 import "./Card.css";
 
-const Card = ({lang,img}) => {
+console.log(PropTypes)
+
+const Card = ({lang,img,fcolor,scolor}) => {
   return (
     <section>
         <div className="card-container">
@@ -9,7 +13,14 @@ const Card = ({lang,img}) => {
             <h3>{lang}</h3>
         </div>
     </section>
-  )
+  );
+};
+
+Card.propTypes = {
+    lang: PropTypes.string,
+    img: PropTypes.string,
+    fcolor: PropTypes.string,
+    scolor: PropTypes.string
 }
 
 export default Card
