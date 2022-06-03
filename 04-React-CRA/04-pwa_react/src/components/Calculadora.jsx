@@ -1,17 +1,12 @@
 import { useState } from 'react'
+import NumberInput from './NumberInput';
 
 const Calculadora = () => {
   const [suma, setSuma] = useState(0);
   return (
     <div>
-        <label>
-            Número 1: 
-            <input type="text" />
-        </label>
-        <label>
-            Número 2: 
-            <input type="text" />
-        </label>
+        <NumberInput name="Número 1"/>
+        <NumberInput name="Número 2"/>
         <br/>
         <span>Suma: {suma}</span>
     </div>
