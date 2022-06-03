@@ -11,6 +11,8 @@ const NumberInput = ({name}) => {
   )
 }
 
-NumberInput.propTypes = {}
+NumberInput.propTypes = {
+    name:PropTypes.string
+}
 
 export default NumberInput
