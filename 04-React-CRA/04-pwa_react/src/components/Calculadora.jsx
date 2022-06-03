@@ -4,6 +4,7 @@ import Result from './Result';
 
 const Calculadora = () => {
   const [suma, setSuma] = useState(50);
+  
   return (
     <div>
         <NumberInput name="Número 1"/>
