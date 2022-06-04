@@ -8,7 +8,6 @@ const Calculadora = () => {
   return (
     <div>
         <NumberInput name="Número 1"/>
-        <NumberInput name="Número 2"/>
         <br/>
         <Result operacion='Suma' calculo={suma}/>
         <Result operacion='Resta' calculo={suma}/>
