@@ -1,30 +1,28 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
+import Result from './Result'
 
 const NumberInput = () => {
-  //const [numeros, setNumeros] = useState(0)
   const [numeros, setNumeros] = useState({
     numero1:0,
     numero2:0
   });
   const {numero1, numero2} = numeros
   const handleChange=(e)=>{
-      //console.log(e)
-      //setNumeros(e.target.value)
-      setNumeros({
-        //spread mantiene la estrucutra inicial
-        ...numeros,
-        //computar una respuesta (objetos distintos al state)
-        [e.target.name]: parseFloat(e.target.value),
-      });
-      
-  }
-  /*const handleChange2=(e)=>{
     setNumeros({
-      numero1: parseFloat(e.target.value),
-      numero2: numero2
-    })
-  }*/
+      //spread mantiene la estrucutra inicial
+      ...numeros,
+      //computar una respuesta (objetos distintos al state)
+      [e.target.name]: parseFloat(e.target.value),
+    });
+    
+    //setSuma((actual)=>actual+[e.target.value])
+  }
+
+  const sumar = ()=> numero1+numero2;
+  const restar = ()=> numero1-numero2;
+  const multiplicar = ()=> numero1*numero2;
+  const dividir = ()=> numero1/numero2;
 
   return (
     <>
@@ -36,6 +34,11 @@ const NumberInput = () => {
             Número 2: {""}
             <input name="numero2" value={numero2} onChange={handleChange} type="number" />
         </label>
+        <hr />
+        <Result operacion='Suma' calculo={sumar()}/>
+        <Result operacion='Resta' calculo={restar()}/>
+        <Result operacion='Multiplicación' calculo={multiplicar()}/>
+        <Result operacion='Divición' calculo={dividir()}/>
     </>
   )
 }
