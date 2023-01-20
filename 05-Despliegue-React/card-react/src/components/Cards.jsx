@@ -4,8 +4,10 @@ import Card from './Card'
 const Cards = () => {
   return (
     <Fragment>
+        <>
         <Card/>
         <Card/>
+        </>
         <Card/>
         <Card/>
     </Fragment>
