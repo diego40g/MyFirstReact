@@ -1,11 +1,13 @@
 import React from 'react'
 
+import "./Card.css"
+
 const Card = () => {
   return (
-    <>
-        <img src="#" alt="lang.svg" />
-        <h3>Lenguahe</h3>
-    </>
+    <div className='card'>
+        <img src="https://cdn.svgporn.com/logos/python.svg" alt="lang.svg" />
+        <h3>Lenguaje</h3>
+    </div>
   )
 }
 
