@@ -2,12 +2,12 @@ import React from 'react'
 
 import "./Card.css"
 
-const Card = () => {
+const Card = ({lang, img}) => {
   return (
     <div className='card'>
-        <img src="https://cdn.svgporn.com/logos/python.svg" alt="python image" />
+        <img src={img} alt={lang+" image"} />
         <h3>
-          Python
+          {lang}
         </h3>
     </div>
   )
