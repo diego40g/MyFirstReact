@@ -5,7 +5,9 @@ import "./Card.css"
 
 const Card = ({lang, img, fcolor, scolor}) => {
   return (
-    <div className='card'>
+    <div className='card' style={{
+      background: `linear-gradient(to left, ${fcolor}, ${scolor})`,
+    }}>
         <img src={img} alt={lang+" image"} />
         <h3>
           {lang}
