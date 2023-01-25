@@ -1,10 +1,14 @@
 import Calculadora from "./components/Calculadora";
-import State from "./components/State-use"
+import StateUse from "./components/State-use"
+import EffectUse from "./components/Effect-use"
 import './App.css'
 
 const App = () => {
   return (
-    <State/>
+    <>
+    <StateUse/>
+    <EffectUse/>
+    </>
     // <div className="container text-center">
     //   <h1>Calculadora React PWA</h1>
     //   <hr />
