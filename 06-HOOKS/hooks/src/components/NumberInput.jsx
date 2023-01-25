@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import Result from './Result'
+import Result from './Resultado'
 import { operations } from '../helpers/operations'
 
 const NumberInput = () => {
