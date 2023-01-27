@@ -6,10 +6,10 @@ const EffectAsync = () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/users')
     const data = await res.json()
     setUsers(data)
-   }
-   useEffect(() => {
+  }
+  useEffect(() => {
     getUsuarios()
-   },[])
+  },[])
   console.log(users);
   return (
     <div>
