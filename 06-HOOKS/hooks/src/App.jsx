@@ -5,13 +5,14 @@ import './App.css'
 import FormPreventDefault from "./components/Form-PreventDefault";
 import EffectAsync from "./components/Effect-async";
 import EffectUseDependency from "./components/Effect-use-dependency";
+import EffectUseDanger from "./components/Effect-use-danger";
 
 const App = () => {
   return (
     <div className="container text-center">
     {/* <StateUse/>
     <EffectUse/> */}
-    <EffectUseDependency/>
+    <EffectUseDanger/>
     </div>
     // <div className="container text-center">
     //   <h1>Calculadora React PWA</h1>
