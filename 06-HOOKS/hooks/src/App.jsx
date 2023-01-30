@@ -8,13 +8,14 @@ import EffectUseDependency from "./components/Effect-use-dependency";
 import EffectUseDanger from "./components/Effect-use-danger";
 import EffectUseCleanUp from "./components/Effect-use-clean-up";
 import EffectUseLayout from "./components/Effect-use-layout";
+import RefUse from "./components/Ref-use";
 
 const App = () => {
   return (
     <div className="container text-center">
     {/* <StateUse/>
     <EffectUse/> */}
-    <EffectUseLayout/>
+    <RefUse/>
     </div>
     // <div className="container text-center">
     //   <h1>Calculadora React PWA</h1>
