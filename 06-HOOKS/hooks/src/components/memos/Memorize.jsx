@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useMemo, useState} from 'react'
 import Dato from './Data'
 
 const Memorize = () => {
@@ -7,6 +7,14 @@ const Memorize = () => {
   const handleClick = () => {
     setCounter(counter + 1)
   }
+  const pesado = (iter) => {
+    for (let i=0; i<iter;i++){
+      console.log("procesando");
+    }
+    return "fin del proceso"
+  }
+  //const pesadoMemo = useMemo(() => pesado(counter), [counter])
+  useMemo(() => pesado(counter), [counter])
   return (
     <>
         <h1>Memorize: <Dato value={counter}/></h1>
