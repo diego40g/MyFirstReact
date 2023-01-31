@@ -7,4 +7,4 @@ const Btn = ({add}) => {
   )
 }
 
-export default Btn
+export default React.memo(Btn)
