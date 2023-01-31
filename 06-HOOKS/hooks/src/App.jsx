@@ -10,13 +10,14 @@ import EffectUseCleanUp from "./components/Effect-use-clean-up";
 import EffectUseLayout from "./components/Effect-use-layout";
 import RefUse from "./components/Ref-use";
 import Memorize from "./components/memos/Memorize";
+import CallbackUse from "./components/memos/Callback-use";
 
 const App = () => {
   return (
     <div className="container text-center">
     {/* <StateUse/>
     <EffectUse/> */}
-    <Memorize/>
+    <CallbackUse/>
     </div>
     // <div className="container text-center">
     //   <h1>Calculadora React PWA</h1>
