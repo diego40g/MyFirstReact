@@ -12,13 +12,14 @@ import RefUse from "./components/Ref-use";
 import Memorize from "./components/memos/Memorize";
 import CallbackUse from "./components/memos/Callback-use";
 import Custom from "./components/Custom";
+import MemorizeHook from "./components/memos/MemorizeHook";
 
 const App = () => {
   return (
     <div className="container text-center">
     {/* <StateUse/>
     <EffectUse/> */}
-    <Custom/>
+    <MemorizeHook/>
     </div>
     // <div className="container text-center">
     //   <h1>Calculadora React PWA</h1>
