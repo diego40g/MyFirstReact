@@ -11,13 +11,14 @@ import EffectUseLayout from "./components/Effect-use-layout";
 import RefUse from "./components/Ref-use";
 import Memorize from "./components/memos/Memorize";
 import CallbackUse from "./components/memos/Callback-use";
+import Custom from "./components/Custom";
 
 const App = () => {
   return (
     <div className="container text-center">
     {/* <StateUse/>
     <EffectUse/> */}
-    <CallbackUse/>
+    <Custom/>
     </div>
     // <div className="container text-center">
     //   <h1>Calculadora React PWA</h1>
