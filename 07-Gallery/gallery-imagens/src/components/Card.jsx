@@ -1,15 +1,22 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const Card = () => {
+const Card = ({imgUrl}) => {
   return (
-    <div className="card" style={{
+    <div 
+      className="card" 
+      style={{
         width: "15rem"
       }}>
-        <img src="https://images.unsplash.com/photo-1674558916626-9c6531f67cf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=Mnw0MDYwMjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzUzNzQ2Mjc&ixlib=rb-4.0.3&q=80&w=1080" 
+        <img src={imgUrl} 
         className="card-img-top" 
         alt="imagen punto png"/>
-    </div>
+  </div>
   )
+}
+
+Card.propTypes = {
+  imgUrl: PropTypes.string,
 }
 
 export default Card

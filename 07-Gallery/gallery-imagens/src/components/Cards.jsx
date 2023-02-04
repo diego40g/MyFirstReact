@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react'
 import Card from './Card'
 
 const Cards = () => {
-  const [images, setImages] = useState({})
+  const [images, setImages] = useState({
+    urls: {
+      regular: "",
+    },
+  });
   const peticion = async () => {
     const res = await fetch(`https://api.unsplash.com/photos/random?client_id=${import.meta.env.VITE_KEY_UNPLASH}`)
     const data = await res.json()
@@ -15,7 +19,7 @@ const Cards = () => {
   }, [])
   return (
     <>
-        <Card/>
+        <Card imgUrl={images.urls.regular}/>
     </>
   )
 }
