@@ -13,8 +13,21 @@ const Cards = () => {
   useEffect(() => {
     peticion();
   }, [])
+  const [input, setInput] = useState("second")
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const text = e.target[0].value
+
+    setInput(text)
+  }
   return (
     <>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Buscar:{" "}
+          <input type="text" name="inputText"/>
+        </label>
+      </form>
       {
         images.map((img) => {
           return <Card key={img.id} imgUrl={img.urls.regular}/>
