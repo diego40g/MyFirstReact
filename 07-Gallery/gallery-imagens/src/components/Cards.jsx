@@ -36,16 +36,25 @@ const Cards = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label className='w-100 text-center'>
           Buscar:{" "}
-          <input type="text" name="inputText"/>
+          <input className='w-75' type="text" name="inputText"/> 
+          <button type='submit' className='btn btn-warning mx-2'>
+            <span className="material-symbols-outlined">
+              search
+            </span>
+          </button>
         </label>
       </form>
-      {
-        images.map((img) => {
-          return <Card key={img.id} imgUrl={img.urls.regular}/>
-        })
-      }
+      <div className="row">
+        {
+          images.map((img) => {
+            return <div key={img.id} className="col">
+              <Card imgUrl={img.urls.regular}/>
+            </div>
+          })
+        }
+      </div>
     </>
   )
 }
