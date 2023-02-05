@@ -1,25 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Card from './Card'
 
 const Cards = () => {
   const [images, setImages] = useState([]);
   const [input, setInput] = useState("")
 
-  const peticion = async () => {
+  const peticion = useCallback( async () => {
     const key = `client_id=${import.meta.env.VITE_KEY_UNPLASH}`
     let route = `https://api.unsplash.com/photos/?${key}`
 
     if(input !== ""){
-      route = `https://api.unsplash.com/search/photos?page=1&query=${input}&${key}`
+      route = `https://api.unsplash.com/search/photos?page=1&query=${encodeURI(input)}&${key}`
     }
 
-    //const res = await fetch(route)
+    const res = await fetch(route)
     const data = await res.json()
-    setImages(data)
-  }
+
+    if (data.results) {
+      setImages(data.results)
+    }else{
+      setImages(data)
+    }
+  }, [input])
+
   useEffect(() => {
     peticion();
-  }, [input])
+  }, [peticion])
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const text = e.target[0].value
