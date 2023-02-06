@@ -5,6 +5,7 @@ import Loading from './Loading'
 const Cards = () => {
   const [images, setImages] = useState([]);
   const [input, setInput] = useState("")
+  const [loading, setLoading] = useState(true)
 
   const peticion = useCallback( async () => {
     const key = `client_id=${import.meta.env.VITE_KEY_UNPLASH}`
@@ -14,6 +15,8 @@ const Cards = () => {
       route = `https://api.unsplash.com/search/photos?page=1&query=${encodeURI(input)}&${key}`
     }
 
+    setLoading(true)
+
     //const res = await fetch(route)
     const data = await res.json()
 
@@ -22,6 +25,8 @@ const Cards = () => {
     }else{
       setImages(data)
     }
+
+    setLoading(false)
   }, [input])
 
   useEffect(() => {
@@ -48,7 +53,7 @@ const Cards = () => {
         </label>
       </form>
 
-      <Loading/>
+      { loading && <Loading/> }
 
       <div className="row">
         {
