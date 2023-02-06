@@ -13,7 +13,7 @@ const Cards = () => {
       route = `https://api.unsplash.com/search/photos?page=1&query=${encodeURI(input)}&${key}`
     }
 
-    const res = await fetch(route)
+    //const res = await fetch(route)
     const data = await res.json()
 
     if (data.results) {
@@ -39,7 +39,7 @@ const Cards = () => {
         <label className='w-100 text-center'>
           Buscar:{" "}
           <input className='w-75' type="text" name="inputText"/> 
-          <button type='submit' className='btn btn-warning mx-2'>
+          <button type='submit' className='btn btn-warning m-2'>
             <span className="material-symbols-outlined">
               search
             </span>
