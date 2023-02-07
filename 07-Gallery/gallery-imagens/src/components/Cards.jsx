@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import Card from './Card'
 import Loading from './Loading'
+import FormImg from './FormImg'
 
 const Cards = () => {
   const [images, setImages] = useState([]);
@@ -41,17 +42,8 @@ const Cards = () => {
   }
   return (
     <div className='text-center'>
-      <form onSubmit={handleSubmit}>
-        <label className='w-100 text-center'>
-          Buscar:{" "}
-          <input className='w-75' type="text" name="inputText"/> 
-          <button type='submit' className='btn btn-warning m-2'>
-            <span className="material-symbols-outlined">
-              search
-            </span>
-          </button>
-        </label>
-      </form>
+      <FormImg handleSubmit={handleSubmit}/>
+      <hr />
 
       { loading && <Loading/> }
 
