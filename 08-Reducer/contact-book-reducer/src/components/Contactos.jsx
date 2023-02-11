@@ -26,7 +26,7 @@ const Contactos = () => {
   
   return (
     <div className='container mt-3'>
-        <FormularioAdd/>
+        <FormularioAdd dispatch={dispatch}/>
         <TableContacts contactos={state}/>
     </div>
   )
