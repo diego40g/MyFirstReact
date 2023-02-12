@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#images / icons
+*.png
+*.jpg
+*.jpge
