@@ -1,6 +1,9 @@
 import React from 'react'
 
-const TableContacts = ({ contactos }) => {
+const TableContacts = ({ contactos= [], dispatch }) => {
+  const handleDelete = (id) => {
+    console.log(id);
+  }
   return (
     <table className='table'>
         <thead>
@@ -21,7 +24,7 @@ const TableContacts = ({ contactos }) => {
                             <td>{contacto.nombre}</td>
                             <td>{contacto.numero}</td>
                             <td>
-                                <button className="btn btn-danger">Eliminar</button>
+                                <button onClick={() => handleDelete(contacto.id)} className="btn btn-danger">Eliminar</button>
                             </td>
                         </tr>
                     )
