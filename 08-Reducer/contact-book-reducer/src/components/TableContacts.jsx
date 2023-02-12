@@ -2,7 +2,12 @@ import React from 'react'
 
 const TableContacts = ({ contactos= [], dispatch }) => {
   const handleDelete = (id) => {
-    console.log(id);
+    const deleteAction = {
+        type: "delete",
+        payload: id,
+    }
+
+    dispatch(deleteAction)
   }
   return (
     <table className='table'>
