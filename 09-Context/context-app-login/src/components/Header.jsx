@@ -11,7 +11,7 @@ const Header = () => {
                 data-bs-toggle='collapse'
                 data-bs-target="#navbarSupportedContent"
                 aria-controls='navbarSupportedContent'
-                aria-aria-expanded="false"
+                aria-expanded="false"
                 aria-label='Toggle navigation'>
                 <span className='navbar-toggler-icon'></span>
             </button>
