@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink, useNavigate  } from 'react-router-dom'
 
 const Navbar = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const handleLogout = () => {
     navigate("/login");
   }
