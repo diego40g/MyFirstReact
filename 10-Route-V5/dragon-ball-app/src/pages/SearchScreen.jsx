@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import queryString from 'query-string'
 import { Characters } from '../models/Characters'
+import Card from '../components/Card';
 
 const SearchScreen = () => {
   const navigate = useNavigate();
@@ -56,6 +57,21 @@ const SearchScreen = () => {
               </label>
               <button type='submit' className='btn btn-info w-100'>Search</button>
             </form>
+          </div>
+          <div className="col-6">
+            <h2>Results: {characters.length}</h2>
+            {
+              characters.length === 0 
+              && 
+              <div className="alert alert-warning text-center">
+                Please search an other character
+              </div>
+            }
+            {
+              characters.map(character => 
+                <Card key={character.id} {...character} />  
+              )
+            }
           </div>
         </div>
     </div>
