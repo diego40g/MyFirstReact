@@ -1,6 +1,40 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom';
+import queryString from 'query-string'
+import { Characters } from '../models/Characters'
 
 const SearchScreen = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const {q = ""} = queryString.parse(location.search)
+  const [inputValue, setInputValue] = useState(q)
+  const [characters, setCharacters] = useState([])
+
+  const  handleChange = (e) => {
+    const value = e.target.value
+    setInputValue(value)
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    navigate(`?q=${inputValue}`)
+  }
+  const getCharacters = () => {
+    if(inputValue.trim() !== ""){
+      const value = inputValue.toLocaleLowerCase()
+      const characters = Characters.filter(character => 
+        character.name.toLocaleLowerCase().includes(value)
+      )
+      setCharacters(characters)
+    } else {
+      setCharacters([])
+    }
+  }
+
+  useEffect(() => {
+    getCharacters()
+  }, [q])
+  
+
   return (
     <div>
         <h1>Search</h1>
@@ -8,7 +42,7 @@ const SearchScreen = () => {
         <div className="row">
           <div className="col-6">
             <h2>Search</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
               <label className='form-label w-100'>
                 Character: {""}
                 <input 
@@ -16,7 +50,8 @@ const SearchScreen = () => {
                   type="text" 
                   className='form-control' 
                   autoComplete='off' 
-                  value={""} 
+                  value={inputValue}
+                  onChange={handleChange}
                 />
               </label>
               <button type='submit' className='btn btn-info w-100'>Search</button>
