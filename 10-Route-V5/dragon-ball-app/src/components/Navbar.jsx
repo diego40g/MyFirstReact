@@ -4,7 +4,7 @@ import { NavLink, useNavigate  } from 'react-router-dom'
 const Navbar = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
-    navigate("/login");
+    navigate("login");
   }
   return (
     <nav className="navbar navbar-expand-lg bg-info">
