@@ -1,8 +1,10 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { useParams } from 'react-router'
 import { Characters } from '../models/Characters';
 
-const CharacterScreen = ({history}) => {
+const CharacterScreen = () => {
+  const history = useHistory();
   const {id} = useParams();
   const { type, name, description } = Characters.find(character => character.id === id)
   const path = `/public/assets/${type}-${id}.png`
