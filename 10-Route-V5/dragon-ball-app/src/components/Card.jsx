@@ -16,6 +16,9 @@ const Card = ({ name, description, type, id }) => {
                 {name}
             </h3>
             <p className="card-text">
+                {description}
+            </p>
+            <p className="card-text">
                 <Link className="card-link" to={`/character/${id}`}>
                     Ver más ...
                 </Link>
