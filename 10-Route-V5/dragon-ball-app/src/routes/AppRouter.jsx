@@ -18,15 +18,16 @@ const AppRouter = () => {
               <h2>Loading...</h2>
             </div>
           }
-        />
-        <Switch>
-            <Route exact path='/men' component={MenScreen}/>
-            <Route exact path='/women' component={WomenScreen}/>
-            <Route exact path='/search' component={SearchScreen}/>
+        >
+          <Switch>
+              <Route exact path='/men' component={MenScreen}/>
+              <Route exact path='/women' component={WomenScreen}/>
+              <Route exact path='/search' component={SearchScreen}/>
 
-            <Route exact path='/character/:id' component={CharacterScreen}/>
-            <Redirect to={'/men'} />
-        </Switch>   
+              <Route exact path='/character/:id' component={CharacterScreen}/>
+              <Redirect to={'/men'} />
+          </Switch>   
+        </Suspense>
     </>
   )
 }
