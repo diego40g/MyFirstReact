@@ -4,7 +4,7 @@ import queryString from 'query-string'
 import { Characters } from '../models/Characters'
 import Card from '../components/Card';
 
-const SearchScreen = (history) => {
+const SearchScreen = ({ history }) => {
   const location = useLocation();
   const {q = ""} = queryString.parse(location.search)
   const [inputValue, setInputValue] = useState(q)
@@ -16,7 +16,7 @@ const SearchScreen = (history) => {
   }
   const handleSubmit = (e) => {
     e.preventDefault()
-    history(`?q=${inputValue}`)
+    history.push(`?q=${inputValue}`)
   }
   const getCharacters = () => {
     if(inputValue.trim() !== ""){
