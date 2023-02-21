@@ -1,10 +1,8 @@
 import React, { useContext } from 'react'
-import { useHistory } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
 import { authTypes } from '../types/authTypes'
 
-const LoginScreen = () => {
-  const history = useHistory();
+const LoginScreen = ({ history }) => {
   const { dispatch } = useContext(AuthContext)
   const handleLogin = () => {
     dispatch({ type: authTypes.login })
