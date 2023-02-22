@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Navbar from '../components/Navbar'
-
+import Loading from '../components/Loading'
 const MenScreen = lazy(() => import ('../pages/MenScreen'))
 const WomenScreen = lazy(() => import ('../pages/WomenScreen'))
 const SearchScreen = lazy(() => import ('../pages/SearchScreen'))
@@ -14,9 +14,7 @@ const AppRouter = () => {
         <Navbar/>
         <Suspense
           fallback={
-            <div>
-              <h2>Loading...</h2>
-            </div>
+              <Loading/>
           }
         >
           <Switch>
