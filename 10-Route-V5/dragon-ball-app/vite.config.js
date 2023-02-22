@@ -10,11 +10,11 @@ export default defineConfig({
       registerType: 'autoUpdate',
       manifest: {
         name: "Dragon Ball bookstore",
-        short_name: "CollectionDB",
+        short_name: "DB Router",
         start_url: ".",
         display: "fullscreen",
-        theme_color: "#000000",
-        background_color: "#d1e3f7",
+        theme_color: "#0dcaf0",
+        background_color: "#555555",
         description: "Login to search and has data about characters of Dragon Ball",
         lang: "es",
         icons: [
