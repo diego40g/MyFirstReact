@@ -3,9 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "reactSnap": {
+    "inlineCss": true
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "react-snap",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -21,6 +25,7 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
+    "react-snap": "^1.23.0",
     "vite": "^4.1.0",
     "vite-plugin-pwa": "^0.14.4"
   }
