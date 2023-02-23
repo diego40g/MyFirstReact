@@ -5,7 +5,7 @@ import { Characters } from '../models/Characters';
 const CharacterScreen = ({ history }) => {
   const {id} = useParams();
   const { type, name, description } = Characters.find(character => character.id === id)
-  const path = `/public/assets/${type}-${id}.png`
+  const path = `/assets/${type}-${id}.png`
   const handleBack = () => {
     history.goBack()
   }
