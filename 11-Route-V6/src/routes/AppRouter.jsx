@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import Navbar from '../components/Navbar'
 import Loading from '../components/Loading'
@@ -17,14 +17,14 @@ const AppRouter = () => {
               <Loading/>
           }
         >
-          <Switch>
-              <Route exact path='/men' component={MenScreen}/>
-              <Route exact path='/women' component={WomenScreen}/>
-              <Route exact path='/search' component={SearchScreen}/>
+          <Routes>
+              <Route end path='/men' element={<MenScreen/>}/>
+              <Route end path='/women' element={<WomenScreen/>}/>
+              <Route end path='/search' element={<SearchScreen/>}/>
 
-              <Route exact path='/character/:id' component={CharacterScreen}/>
-              <Redirect to={'/men'} />
-          </Switch>   
+              <Route end path='/character/:id' element={<CharacterScreen/>}/>
+              <Route path='*' element={<MenScreen/>} />
+          </Routes>   
         </Suspense>
     </>
   )
