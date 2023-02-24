@@ -1,12 +1,14 @@
 import React, { useContext } from 'react'
 import { AuthContext } from '../context/AuthContext'
 import { authTypes } from '../types/authTypes'
+import { useNavigate } from 'react-router-dom'
 
-const LoginScreen = ({ history }) => {
+const LoginScreen = () => {
+  const navigate = useNavigate()
   const { dispatch } = useContext(AuthContext)
   const handleLogin = () => {
     dispatch({ type: authTypes.login })
-    history.push("/")
+    navigate("/")
   }
   return (
     <div className='container mt-5 text-center'>
