@@ -9,13 +9,12 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: '',
-        short_name: '',
-        theme_color: '',
-        background_color: '',
-        description: '',
-        lang: 'es',
-        icons: [{}]
+        name: 'Salary app',
+        short_name: 'r',
+        theme_color: '#000000',
+        background_color: '#ffffff',
+        description: 'des',
+        lang: 'es'
       }
     })
   ],
