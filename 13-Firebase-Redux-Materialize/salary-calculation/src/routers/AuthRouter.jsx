@@ -1,10 +1,18 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import LoginScreen from '../pages/LoginScreen'
+import RegisterScreen from '../pages/RegisterScreen'
 
 const AuthRouter = () => {
   return (
-    <div>
-        <h1>Auth Router</h1>
-    </div>
+    <>
+        <Router>
+            <Routes>
+                <Route path="/login" element={<LoginScreen/>}/>
+                <Route path="/register" element={<RegisterScreen/>}/>
+            </Routes>
+        </Router>
+    </>
   )
 }
 
