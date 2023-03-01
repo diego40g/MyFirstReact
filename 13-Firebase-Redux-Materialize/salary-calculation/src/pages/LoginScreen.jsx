@@ -19,7 +19,7 @@ const LoginScreen = () => {
               className="materialize-textarea"
               type="text" 
             />
-            <label for="icon_prefix2">Email</label>
+            <label htmlFor="icon_prefix2">Email</label>
           </div>
           <div className="input-field col s12">
             <i className="material-icons prefix">
@@ -30,7 +30,7 @@ const LoginScreen = () => {
               className="materialize-textarea"
               type="text"
             />
-            <label for="icon_prefix2">Password</label>
+            <label htmlFor="icon_prefix2">Password</label>
           </div>
         </div>
         <button className='btn waves-effect' type='submit'>
