@@ -1,8 +1,16 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+
 import GoogleButton from 'react-google-button'
 import { Link } from 'react-router-dom'
 
+import { googleLogin } from '../actions/auth'
+
 const LoginScreen = () => {
+  const dispatch = useDispatch()
+  const handleGoogleLogin = () => {
+    dispatch(googleLogin("12345", "Diego"))
+  }
   return (
     <div>
       <h3>Login</h3>
@@ -37,7 +45,7 @@ const LoginScreen = () => {
           Send
         </button>
         <hr />
-        <GoogleButton onClick={()=>console.log("Google")} />
+        <GoogleButton onClick={handleGoogleLogin} />
         <Link to={"/register"}>Register in the platform</Link>
       </form>
       </div>
