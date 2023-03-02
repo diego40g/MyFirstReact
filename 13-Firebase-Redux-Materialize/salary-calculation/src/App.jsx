@@ -1,9 +1,12 @@
-import './App.css'
+import { Provider } from 'react-redux'
 import AuthRouter from './routers/AuthRouter'
+import { store } from './store/store'
 
 function App() {
   return (
-    <AuthRouter/>
+    <Provider store={store}>
+      <AuthRouter/>
+    </Provider>
   )
 }
 
