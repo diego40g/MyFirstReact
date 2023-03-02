@@ -12,7 +12,7 @@ const LoginScreen = () => {
     dispatch(googleLogin("12345", "Diego"))
   }
   return (
-    <div>
+    <div className='container'>
       <h3>Login</h3>
       <hr />
       <div className="row container">
@@ -23,11 +23,11 @@ const LoginScreen = () => {
               email
             </i>
             <input 
-              id="icon_prefix2"
+              id="icon_prefix1"
               className="materialize-textarea"
-              type="text" 
+              type="email" 
             />
-            <label htmlFor="icon_prefix2">Email</label>
+            <label htmlFor="icon_prefix1">Email</label>
           </div>
           <div className="input-field col s12">
             <i className="material-icons prefix">
@@ -36,7 +36,7 @@ const LoginScreen = () => {
             <input 
               id="icon_prefix2"
               className="materialize-textarea"
-              type="text"
+              type="password"
             />
             <label htmlFor="icon_prefix2">Password</label>
           </div>
