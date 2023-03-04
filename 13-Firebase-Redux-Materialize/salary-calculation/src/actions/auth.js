@@ -1,5 +1,5 @@
 import { types } from '../types/types'
-import { signInWithPopup, googleAuhtProvider, auth, provider } from '../firebase/config-firebase'
+import { signInWithPopup, googleAuhtProvider, auth, provider, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from '../firebase/config-firebase'
 
 export const googleLogin = () => {
     return (dispatch) => {
@@ -14,6 +14,26 @@ export const googleLogin = () => {
             const errorMessage = error.message
             const email = error.customData.email
             const credential = googleAuhtProvider.credentialFromError(error)
+        })
+    }
+}
+
+export const register = (email,password,username) => {
+    return (dispatch) => {
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user
+            updateProfile(auth.currentUser,{
+                displayName: username
+            }).then(()=>{
+                console.log("actualizado");
+            }).catch((error) => {
+                console.log("error actualizar");
+            })
+        })
+        .catch((error) => {
+            const errorCode = error.code
+            const errorMessage = error.message
         })
     }
 }
