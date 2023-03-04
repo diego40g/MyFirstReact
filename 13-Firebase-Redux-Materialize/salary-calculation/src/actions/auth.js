@@ -26,7 +26,9 @@ export const register = (email,password,username) => {
             updateProfile(auth.currentUser,{
                 displayName: username
             }).then(()=>{
-                console.log("actualizado");
+                dispatch(
+                    login(user.uid, user.displayName)
+                )
             }).catch((error) => {
                 console.log("error actualizar");
             })
