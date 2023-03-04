@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore, Timestamp, FieldPath } from "firebase/firestore";
-import { signInWithPopup, getAuth, signOut, signInWithEmailAndPassword, GoogleAuthProvider } from "firebase/auth"
+import { signInWithPopup, getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider } from "firebase/auth"
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
@@ -24,4 +24,4 @@ const googleAuhtProvider = GoogleAuthProvider
 
 const auth = getAuth()
 
-export { analytics, db, googleAuhtProvider, signInWithPopup, auth, provider }
+export { analytics, db, googleAuhtProvider, signInWithPopup, auth, provider, createUserWithEmailAndPassword, signInWithEmailAndPassword }
