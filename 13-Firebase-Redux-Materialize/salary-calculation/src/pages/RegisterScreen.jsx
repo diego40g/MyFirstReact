@@ -21,8 +21,6 @@ const RegisterScreen = () => {
       ...data,
       [e.target.name]: value,
     })
-
-    console.log(value);
   }
 
   const handleRegister = (e) => {
