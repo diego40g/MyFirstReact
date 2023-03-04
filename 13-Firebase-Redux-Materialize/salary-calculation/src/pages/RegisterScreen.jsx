@@ -24,6 +24,24 @@ const RegisterScreen = () => {
 
   const handleRegister = (e) => {
     e.preventDefault()
+
+    if (email.trim() === "" || !email.trim().includes("@")) {
+      return 
+    }
+
+    if (username.trim().length < 2) {
+      return
+    }
+
+    if (password.trim().length < 6) {
+      return
+    } else {
+      if (password.trim() !== passwordRepeat.trim()) {
+        return
+      }
+    }
+
+    console.log("Formulario Correcto");
   }
   return (
     <div className='container'>
