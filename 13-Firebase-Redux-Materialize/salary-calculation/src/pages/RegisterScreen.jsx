@@ -1,13 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const RegisterScreen = () => {
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+    passwordRepeat: "",
+    username: "",
+  })
+
+  const { email, password, passwordRepeat, username} = data;
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    
+    setData({
+      ...data,
+      [e.target.name]: value,
+    })
+
+    console.log(value);
+  }
+
+  const handleRegister = (e) => {
+    e.preventDefault()
+  }
   return (
     <div className='container'>
       <h3>Register</h3>
       <hr />
       <div className="row container">
-      <form className='col s12'>
+      <form onSubmit={handleRegister} className='col s12'>
         <div className="row">
           <div className="input-field col s12">
             <i className="material-icons prefix">
@@ -17,6 +40,9 @@ const RegisterScreen = () => {
               id="icon_prefix1"
               className="materialize-textarea"
               type="email" 
+              onChange={handleChange}
+              value={email}
+              name='email'
             />
             <label htmlFor="icon_prefix1">Email</label>
           </div>
@@ -27,7 +53,10 @@ const RegisterScreen = () => {
             <input 
               id="icon_prefix2"
               className="materialize-textarea"
-              type="text" 
+              type="text"
+              onChange={handleChange}
+              value={username}
+              name='username'
             />
             <label htmlFor="icon_prefix2">Username</label>
           </div>
@@ -39,6 +68,9 @@ const RegisterScreen = () => {
               id="icon_prefix3"
               className="materialize-textarea"
               type="password"
+              onChange={handleChange}
+              value={password}
+              name='password'
             />
             <label htmlFor="icon_prefix3">Password</label>
           </div>
@@ -50,6 +82,9 @@ const RegisterScreen = () => {
               id="icon_prefix4"
               className="materialize-textarea"
               type="password"
+              onChange={handleChange}
+              value={passwordRepeat}  
+              name='passwordRepeat'          
             />
             <label htmlFor="icon_prefix4">Confirm Password</label>
           </div>
