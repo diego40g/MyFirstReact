@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { register } from '../actions/auth'
 
 const RegisterScreen = () => {
+  const dispatch = useDispatch()
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -41,7 +44,7 @@ const RegisterScreen = () => {
       }
     }
 
-    console.log("Formulario Correcto");
+    dispatch(register(email, password, username))
   }
   return (
     <div className='container'>
