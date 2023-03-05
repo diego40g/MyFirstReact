@@ -14,13 +14,11 @@ const LoginScreen = () => {
   })
   const {email, password} = data
   const handleChange = (e) => {
-    const value = e.target.value
+    const value = e.target.value;
     setData({
       ...data,
       [e.target.name]: value,
     })
-    console.log(email);
-    console.log(password);
   }
   const handleGoogleLogin = () => {
     dispatch(googleLogin("12345", "Diego"))
