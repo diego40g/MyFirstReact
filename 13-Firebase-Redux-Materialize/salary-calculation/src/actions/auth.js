@@ -22,7 +22,7 @@ export const emailAndPasswordLogin = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user
-        console.log(user)
+        dispatch(login(user.uid, user.displayName))
     }).catch((error) => {
         const errorCode = error.code
         const errorMessage = error.message
