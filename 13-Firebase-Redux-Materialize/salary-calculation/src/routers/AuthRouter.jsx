@@ -7,24 +7,28 @@ import {auth} from '../firebase/config-firebase'
 import LoginScreen from '../pages/LoginScreen'
 import RegisterScreen from '../pages/RegisterScreen'
 import { login } from '../actions/auth'
+import AppRouter from './AppRouter'
 
 const AuthRouter = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     auth.onAuthStateChanged(
     (user) => {
-      dispatch(login(user.uid, user.displayName))
+      if(user){
+        dispatch(login(user.uid, user.displayName))
+      }
     })
   }, [])
   
   return (
     <>
-        <Router>
-            <Routes>
-                <Route path="/login" element={<LoginScreen/>}/>
-                <Route path="/register" element={<RegisterScreen/>}/>
-            </Routes>
-        </Router>
+      <Router>
+        <Routes>
+          <Route path="/login" element={<LoginScreen/>}/>
+          <Route path="/register" element={<RegisterScreen/>}/>
+        </Routes>
+        <AppRouter/>
+      </Router>
     </>
   )
 }
