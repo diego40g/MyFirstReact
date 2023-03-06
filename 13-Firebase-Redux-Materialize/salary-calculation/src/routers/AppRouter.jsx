@@ -1,8 +1,15 @@
 import React from 'react'
 
+import { Route, Routes } from 'react-router-dom'
+import AppScreen from '../pages/AppScreen'
+
 const AppRouter = () => {
   return (
-    <div>AppRouter</div>
+    <>
+      <Routes>
+        <Route path="/app" element={<AppScreen/>}/>
+      </Routes>
+    </>
   )
 }
 
