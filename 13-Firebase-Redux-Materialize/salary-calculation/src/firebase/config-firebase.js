@@ -24,4 +24,4 @@ const googleAuhtProvider = GoogleAuthProvider
 
 const auth = getAuth()
 
-export { analytics, db, googleAuhtProvider, signInWithPopup, auth, provider, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile }
+export { analytics, db, googleAuhtProvider, signInWithPopup, auth, provider, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signOut }
