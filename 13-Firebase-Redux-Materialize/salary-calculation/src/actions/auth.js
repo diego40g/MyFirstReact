@@ -1,5 +1,5 @@
 import { types } from '../types/types'
-import { signInWithPopup, googleAuhtProvider, auth, provider, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from '../firebase/config-firebase'
+import { signInWithPopup, googleAuhtProvider, auth, provider, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signOut } from '../firebase/config-firebase'
 
 export const googleLogin = () => {
     return (dispatch) => {
@@ -58,5 +58,15 @@ export const login = (uid, displayname) => {
             uid,
             displayname,
         }
+    }
+}
+
+export const logout = () => {
+    return async(dispatch) => {
+        await signOut(auth)
+
+        dispatch({
+            type: types.logout
+        })
     }
 }
