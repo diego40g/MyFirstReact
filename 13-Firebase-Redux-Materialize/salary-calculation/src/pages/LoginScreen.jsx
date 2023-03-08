@@ -74,7 +74,7 @@ const LoginScreen = () => {
         </button>
         <hr />
         <GoogleButton onClick={handleGoogleLogin} />
-        <Link to={"/register"}>Register in the platform</Link>
+        <Link to={"/auth/register"}>Register in the platform</Link>
       </form>
       </div>
     </div>

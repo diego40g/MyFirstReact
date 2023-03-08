@@ -112,7 +112,7 @@ const RegisterScreen = () => {
           Send
         </button>
         <hr />
-        <Link to={"/login"}>Login into account</Link>
+        <Link to={"/auth/login"}>Login into account</Link>
       </form>
       </div>
     </div>
