@@ -1,7 +1,14 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
-const PrivateRouter = ({log, children}) => {
-  return log ? children : <Navigate to="/login" />
+const PrivateRouter = ({log, component: Component, ...resto}) => {
+  return (
+    <Route 
+      {...resto}
+      component={(props) => 
+        log ? <Component {...props}/> : <Redirect to="/auth/login"/>
+      }
+    />
+  )
 }
 export default PrivateRouter

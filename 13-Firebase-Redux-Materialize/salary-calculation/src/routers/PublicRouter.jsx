@@ -1,13 +1,14 @@
 import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
 
-const PublicRouter = ({log, component:Component}) => {
+const PublicRouter = ({log, component:Component, ...resto}) => {
   return (
     <Route
-        component={(props) => {
-            !log ? <Redirect to="/auth/login"/> : <Component {...props} /> 
+        {...resto}
+        component={(props) => 
+            log ? <Redirect to="/"/> : <Component {...props} /> 
         }
-    } />
+    />
   )
 }
 
