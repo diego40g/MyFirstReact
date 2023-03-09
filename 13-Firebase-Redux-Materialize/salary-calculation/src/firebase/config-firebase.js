@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore, Timestamp, FieldPath } from "firebase/firestore";
+import { getFirestore, Timestamp, FieldPath, doc, setDoc } from "firebase/firestore";
 import { signInWithPopup, getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, updateProfile } from "firebase/auth"
 
 const firebaseConfig = {
@@ -24,4 +24,4 @@ const googleAuhtProvider = GoogleAuthProvider
 
 const auth = getAuth()
 
-export { analytics, db, googleAuhtProvider, signInWithPopup, auth, provider, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signOut }
+export { analytics, db, googleAuhtProvider, signInWithPopup, auth, provider, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signOut, setDoc, doc }
