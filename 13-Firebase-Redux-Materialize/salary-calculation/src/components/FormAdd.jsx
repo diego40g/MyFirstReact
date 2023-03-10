@@ -7,22 +7,29 @@ const FormAdd = () => {
   const dispatch = useDispatch()
   const [viewForm, setViewForm] = useState(false)
   const [cantidadPago, setCantidadPago] = useState({
-    horas: 0,
-    precioHora: 0
+    precioHora: 0,
+    horas: 0
   })
+  const {precioHora, horas} = cantidadPago
   const handleAdd = () => {
     setViewForm(!viewForm)
   }
   const handleChange = (e) => {
-    setCantidadPago(parseFloat(e.target.value))
+    setCantidadPago({
+        ...cantidadPago,
+        [e.target.name]: e.target.value
+    })
   }
   const handleSave = () => {
-    dispatch(createRegister(cantidadPago))
+    const cantidadResult = horas * precioHora
+    dispatch(createRegister(cantidadResult))
   }
   return (
     <div>
         <button onClick={handleAdd} className='btn green'>
-            Add
+            {
+                !viewForm ? "Add" : "Close"
+            }
         </button>
         {
             viewForm 
@@ -31,14 +38,16 @@ const FormAdd = () => {
                 <input 
                     type="text" 
                     placeholder='Ingrese cantidad a pagar por hora:' 
-                    value={cantidadPago} 
+                    value={precioHora} 
                     onChange={handleChange} 
+                    name='precioHora'
                 />
                 <input 
                     type="text" 
                     placeholder='Ingrese cantidad de horas:' 
-                    value={cantidadPago} 
-                    onChange={handleChange} 
+                    value={horas} 
+                    onChange={handleChange}
+                    name='horas'
                 />
                 <button onClick={handleSave} className='btn purple'>Calcular y guardar</button>
             </>
