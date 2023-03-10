@@ -6,13 +6,14 @@
  * }
  *  */
 import { db, doc, setDoc } from "../firebase/config-firebase"
-export const createRegister = () => {
+export const createRegister = (pago) => {
     return async (dispatch, getState) => {
         const {uid} = getState().auth
         const datos = {
             fecha: new Date(),
-            pago: 300.0,
+            pago,
         }
-        await setDoc(doc(db, `${uid}`, "nomina"), datos)
+        const reference = await setDoc(doc(db, `${uid}`, "nomina"), datos)
+        console.log(reference)
     }
 }
