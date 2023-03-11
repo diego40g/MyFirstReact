@@ -1,9 +1,11 @@
-import { doc, getDoc, db } from '../firebase/config-firebase'
+import { getDocs, db, collection } from '../firebase/config-firebase'
 export const loadData = async(uid) => {
-    const path = doc(db, `${uid}`, "nomina")
-    const nominaList = await getDoc(path)
-    console.log(nominaList);
-
+    const path = collection(db, `${uid}`, "nominas", "nomina")
+    const nominaList = await getDocs(path)
+    nominaList.forEach((result) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(result.id, " => ", result.data());
+    });
     //const data= nominaList.data()
     const data= []
     return data
