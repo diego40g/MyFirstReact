@@ -1,8 +1,25 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore, Timestamp, FieldPath, doc, setDoc, collection, getDoc } from "firebase/firestore";
-import { signInWithPopup, getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, updateProfile } from "firebase/auth"
+import { 
+  getFirestore, 
+  Timestamp, 
+  FieldPath, 
+  doc, 
+  addDoc, 
+  setDoc, 
+  collection, 
+  getDocs 
+} from "firebase/firestore";
+import { 
+  signInWithPopup, 
+  getAuth, 
+  signOut, 
+  signInWithEmailAndPassword, 
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider, 
+  updateProfile 
+} from "firebase/auth"
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
@@ -34,9 +51,10 @@ export {
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword, 
   updateProfile, 
-  signOut, 
+  signOut,
+  addDoc, 
   setDoc, 
-  getDoc,
+  getDocs,
   doc, 
-  collection 
+  collection,
 }
