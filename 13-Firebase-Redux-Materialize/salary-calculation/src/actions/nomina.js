@@ -6,6 +6,8 @@
  * }
  *  */
 import { db, addDoc, collection } from "../firebase/config-firebase"
+import { types } from "../types/types"
+
 export const createRegister = (pago) => {
     return async (dispatch, getState) => {
         const {uid} = getState().auth
@@ -19,5 +21,12 @@ export const createRegister = (pago) => {
         ]);
         
         console.log(reference.id)
+    }
+}
+
+export const readRegister = (data) => {
+    return {
+        type: types.nominaRead,
+        payload: data
     }
 }
