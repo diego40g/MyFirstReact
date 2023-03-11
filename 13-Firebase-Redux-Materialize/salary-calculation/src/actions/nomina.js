@@ -5,7 +5,7 @@
  *  pago: 3000.00
  * }
  *  */
-import { db, doc, setDoc } from "../firebase/config-firebase"
+import { db, addDoc, collection } from "../firebase/config-firebase"
 export const createRegister = (pago) => {
     return async (dispatch, getState) => {
         const {uid} = getState().auth
@@ -13,7 +13,11 @@ export const createRegister = (pago) => {
             fecha: new Date(),
             pago,
         }
-        const reference = await setDoc(doc(db, `${uid}`, "nomina"), datos)
-        console.log(reference)
+        const nominaRef = collection(db, `${uid}`);
+        const reference = await Promise.all([
+            addDoc(collection(nominaRef, 'nominas', 'nomina'), datos)
+        ]);
+        
+        console.log(reference.id)
     }
 }
