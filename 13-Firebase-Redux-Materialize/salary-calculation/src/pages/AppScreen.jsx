@@ -27,7 +27,9 @@ const AppScreen = () => {
             <tbody>
             {
               data.map((element) => {
-                  return <Element key={element.id} data={element}/>
+                  return <tr key={element.id}>
+                    <Element data={element}/>
+                  </tr>
               })
             }
             </tbody>
