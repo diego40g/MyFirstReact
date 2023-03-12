@@ -20,13 +20,20 @@ export const createRegister = (pago) => {
             addDoc(collection(nominaRef, 'nominas', 'nomina'), datos)
         ]);
         
-        console.log(reference.id)
+        dispatch(create(reference.get()))
     }
 }
 
 export const readRegister = (data) => {
     return {
         type: types.nominaRead,
+        payload: data
+    }
+}
+
+export const create = (data) => {
+    return {
+        type: types.nominaAdd,
         payload: data
     }
 }
