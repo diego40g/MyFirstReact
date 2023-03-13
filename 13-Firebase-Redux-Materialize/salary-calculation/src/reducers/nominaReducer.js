@@ -14,7 +14,7 @@ export const nominaReducer = (state = initialState, action) => {
         case types.nominaAdd:
             return {
                 ...state,
-                data: {...action.payload}
+                data: [...state.data, action.payload]
             };
         case types.nominaRead:
             return {
