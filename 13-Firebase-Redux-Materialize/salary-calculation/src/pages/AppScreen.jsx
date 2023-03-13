@@ -6,14 +6,14 @@ import FormAdd from '../components/FormAdd'
 import Element from '../components/Element'
 
 const AppScreen = () => {
-  const {auth} = useSelector( (state) => state )
-  const data = useSelector((state) => state.nomina.data)
+  const name = useSelector((state) => state.auth.displayname);
+  const data = useSelector((state) => state.nomina.data);
   
   return (
     <>
         <Navbar/>
         <div className="container">
-          <h1 className='center'>Hola {auth.displayname}</h1>
+          <h1 className='center'>Hola {name}</h1>
           <hr />
           <FormAdd />
           <table>
@@ -27,9 +27,9 @@ const AppScreen = () => {
             <tbody>
             {
               data.map((element) => {
-                  return <tr key={element.id}>
-                    <Element data={element}/>
-                  </tr>
+                return( <tr key={element.id}>
+                  <Element data={element}/>
+                </tr>)
               })
             }
             </tbody>
