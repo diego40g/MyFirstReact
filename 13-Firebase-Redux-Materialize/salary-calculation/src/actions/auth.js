@@ -18,8 +18,8 @@ export const googleLogin = () => {
     }
 }
 
-export const emailAndPasswordLogin = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password)
+export const emailAndPasswordLogin = async(email, password) => {
+    await signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user
         dispatch(login(user.uid, user.displayName))
