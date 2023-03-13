@@ -10,7 +10,7 @@ const FormAdd = () => {
     precioHora: 0,
     horas: 0
   })
-  const {precioHora, horas} = cantidadPago
+  const { precioHora, horas } = cantidadPago
   const handleAdd = () => {
     setViewForm(!viewForm)
   }
@@ -23,6 +23,10 @@ const FormAdd = () => {
   const handleSave = () => {
     const cantidadResult = horas * precioHora
     dispatch(createRegister(cantidadResult))
+    setCantidadPago({
+      precioHora: 0,
+      horas: 0,
+    })
   }
   return (
     <div>
