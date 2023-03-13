@@ -10,9 +10,9 @@ import { types } from "../types/types"
 
 export const createRegister = (pago) => {
     return async (dispatch, getState) => {
-        const {uid} = getState().auth
+        const { uid } = getState().auth
         const datos = {
-            fecha: new Date(),
+            fecha: new Date().toLocaleDateString(),
             pago,
         }
         const nominaRef = collection(db, `${uid}`);
@@ -20,7 +20,12 @@ export const createRegister = (pago) => {
             addDoc(collection(nominaRef, 'nominas', 'nomina'), datos)
         ]);
         
-        dispatch(create(reference.get()))
+        const elementId = await reference.id
+        const newData = {
+            ...datos,
+            elementId,
+        }
+        dispatch(create(newData))
     }
 }
 
