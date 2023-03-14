@@ -9,7 +9,9 @@ import {
   addDoc, 
   setDoc, 
   collection, 
-  getDocs 
+  getDocs,
+  updateDoc,
+  deleteDoc,
 } from "firebase/firestore";
 import { 
   signInWithPopup, 
@@ -55,6 +57,8 @@ export {
   addDoc, 
   setDoc, 
   getDocs,
+  updateDoc,
+  deleteDoc,
   doc, 
   collection,
 }
