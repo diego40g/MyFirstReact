@@ -57,3 +57,9 @@ export const deleteR = (id) => {
         payload: id,
     }
 }
+
+export const clean = () => {
+    return {
+        type: types.nominaClean
+    }
+}
