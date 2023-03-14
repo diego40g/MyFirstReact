@@ -5,7 +5,7 @@
  *  pago: 3000.00
  * }
  *  */
-import { db, addDoc, collection } from "../firebase/config-firebase"
+import { db, addDoc, collection, doc, deleteDoc } from "../firebase/config-firebase"
 import { types } from "../types/types"
 
 export const createRegister = (pago) => {
@@ -29,6 +29,14 @@ export const createRegister = (pago) => {
     }
 }
 
+export const deleteRegister = (id) => {
+    return async(dispatch, getState) => {
+        const { uid } = getState().auth
+        await deleteDoc(doc(db,`${uid}`,'nominas','nomina',`${id}`))
+        dispatch(deleteR(id))
+    }
+}
+
 export const readRegister = (data) => {
     return {
         type: types.nominaRead,
@@ -40,5 +48,12 @@ export const create = (data) => {
     return {
         type: types.nominaAdd,
         payload: data
+    }
+}
+
+export const deleteR = (id) => {
+    return {
+        type: types.nominaDelete,
+        payload: id,
     }
 }
