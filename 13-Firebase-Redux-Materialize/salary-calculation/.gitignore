@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 .env
+
+/public/a*
+/public/i*
+/public/w*
