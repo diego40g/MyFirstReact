@@ -12,7 +12,7 @@ const AppScreen = () => {
   return (
     <>
         <Navbar/>
-        <div className="container">
+        <div className="container animate__animated animate__backInUp">
           <h1 className='center'>Hola {name}</h1>
           <hr />
           <FormAdd />
@@ -27,7 +27,7 @@ const AppScreen = () => {
             <tbody>
             {
               data.map((element) => {
-                return( <tr key={element.id}>
+                return( <tr className='animate__animated animate__fadeInUp' key={element.id}>
                   <Element data={element}/>
                 </tr>)
               })
