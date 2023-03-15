@@ -21,7 +21,9 @@ const Element = ({ data }) => {
         <td>{fechaFormato}</td>
         <td>${pago}</td>
         <td>
-            <button onClick={handleDelete} className="btn red">Borrar</button>
+            <button onClick={handleDelete} className="btn red">
+              <i className="material-icons">delete_forever</i>
+            </button>
         </td>
     </>
   )
