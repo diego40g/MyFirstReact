@@ -29,7 +29,7 @@ const FormAdd = () => {
     })
   }
   return (
-    <div>
+    <>
         <button onClick={handleAdd} className='btn green'>
             {
                 !viewForm ? "Add" : "Close"
@@ -38,7 +38,7 @@ const FormAdd = () => {
         {
             viewForm 
             &&  
-            <>
+            <div className='animate__animated animate__fadeIn'>
               <div className='input-field col s12'>
                 <input 
                   id='pago'
@@ -64,9 +64,9 @@ const FormAdd = () => {
                 <label htmlFor="horas">Cantidad de horas</label>
               </div>
                 <button onClick={handleSave} className='btn purple'>Calcular y guardar</button>
-            </>
+            </div>
         }
-    </div>
+    </>
   )
 }
 
