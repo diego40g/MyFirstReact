@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import Counter from "./Counter"
 
 describe("<Counter />", () => {
@@ -13,6 +13,9 @@ describe("<Counter />", () => {
     
     it("Verificar que el click +1 aumente correctamente", () => {
         render(<Counter/>)
-        console.log(screen.getByText("+1").tagName)
+        const btn = screen.getByText("+1")
+
+        fireEvent.click(btn)
+        expect(screen.getByTestId("counter").textContent).toContain("Counter: 1");
     })
 })
