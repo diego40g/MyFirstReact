@@ -6,12 +6,17 @@ const Counter = () => {
   const handleAdd = () => {
     setCounter(counter+1)
   }
+
+  const handleDis = () => {
+    setCounter(counter-1)
+  }
+
   return (
     <>
-        <h2 data-testid="counter">Counter: {counter}</h2>
+        <h2 data-testid="counter" role='counterRole'>Counter: {counter}</h2>
 
-        <button onClick={handleAdd}>+1</button>
-        <button>-1</button>
+        <button onClick={handleAdd} aria-label='aumentar'>+1</button>
+        <button onClick={handleDis} aria-label='disminuir'>-1</button>
     </>
   )
 }
