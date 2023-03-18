@@ -13,9 +13,18 @@ describe("<Counter />", () => {
     
     it("Verificar que el click +1 aumente correctamente", () => {
         render(<Counter/>)
-        const btn = screen.getByText("+1")
+        //const btn = screen.getByText("+1")
+        const btn = screen.getByLabelText("aumentar")
 
         fireEvent.click(btn)
         expect(screen.getByTestId("counter").textContent).toContain("Counter: 1");
+    })
+
+    it("Verificar que el click -1 aumente correctamente", () => {
+        render(<Counter/>)
+        const btn = screen.getByLabelText("disminuir")
+
+        fireEvent.click(btn)
+        expect(screen.getByRole("counterRole").textContent).toContain("Counter: -1");
     })
 })
