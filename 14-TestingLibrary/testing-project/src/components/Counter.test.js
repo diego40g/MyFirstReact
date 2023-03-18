@@ -1,18 +1,18 @@
-import { render } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import Counter from "./Counter"
 
-describe("Probar el componente Counter", () => {
+describe("<Counter />", () => {
     it("Pruebas de que el titulo y el estado del componente Counter se renderizan correctamente", () => {
-        const wrapper = render(<Counter />);
+        render(<Counter />);
     
         // console.log(wrapper.getByText("Counter: 0").tagName);
     
         //ACTUAL
-        expect(wrapper.getByText("Counter: 0").tagName).toBe("H2")
+        expect(screen.getByText("Counter: 0").tagName).toBe("H2");
     })
     
-    it("Prueba que 1 + 1 es 2 y no es 3", () => {
-        expect(1 + 1).toBe(2)
-        expect(1 + 1).not.toBe(3)
+    it("Verificar que el click +1 aumente correctamente", () => {
+        render(<Counter/>)
+        console.log(screen.getByText("+1").tagName)
     })
 })
