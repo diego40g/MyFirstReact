@@ -8,7 +8,7 @@ const Counter = () => {
   }
   return (
     <>
-        <h2>Counter: {counter}</h2>
+        <h2 data-testid="counter">Counter: {counter}</h2>
 
         <button onClick={handleAdd}>+1</button>
         <button>-1</button>
