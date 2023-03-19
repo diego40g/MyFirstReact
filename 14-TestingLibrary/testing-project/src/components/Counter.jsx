@@ -1,26 +1,13 @@
-import React, { useState } from 'react'
+import { useCounter } from "../hooks/useCounter"
 
 const Counter = () => {
-  const [counter, setCounter] = useState(0)
-
-  const handleAdd = () => {
-    setCounter(counter+1)
-  }
-
-  const handleDis = () => {
-    setCounter(counter-1)
-  }
-
-  const handleReset = () => {
-    setCounter(0)
-  }
-
+  const {counter, handleModifyCounter, handleReset} = useCounter()
   return (
     <>
         <h2 data-testid="counter" role='counterRole'>Counter: {counter}</h2>
 
-        <button onClick={handleAdd} aria-label='aumentar'>+1</button>
-        <button onClick={handleDis} aria-label='disminuir'>-1</button>
+        <button onClick={()=>handleModifyCounter()} aria-label='aumentar'>+1</button>
+        <button onClick={()=> handleModifyCounter(-1)} aria-label='disminuir'>-1</button>
         <button onClick={handleReset} aria-label='reset'>Reset</button>
     </>
   )
