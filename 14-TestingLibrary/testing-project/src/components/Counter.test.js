@@ -35,4 +35,37 @@ describe("<Counter />", () => {
         userEvent.click(screen.getByLabelText("reset"))
         expect(screen.getByRole("counterRole").textContent).toContain("Counter: 0")
     })
+
+    it("Simular que alguin esta usando la app", () => {
+        render(<Counter/>)
+        const btnAdd = screen.getByLabelText("aumentar")
+        const btnDis = screen.getByLabelText("disminuir")
+        
+        fireEvent.click(btnAdd);
+        fireEvent.click(btnAdd);
+        fireEvent.click(btnAdd);
+        fireEvent.click(btnAdd);
+        fireEvent.click(btnAdd);
+        fireEvent.click(btnAdd);
+        fireEvent.click(btnAdd);
+
+        expect(screen.getByRole("counterRole").textContent).toContain("Counter: 7")
+
+        fireEvent.click(btnDis);
+        fireEvent.click(btnDis);
+        fireEvent.click(btnDis);
+        fireEvent.click(btnDis);
+        fireEvent.click(btnDis);
+        fireEvent.click(btnDis);
+        fireEvent.click(btnDis);
+        fireEvent.click(btnDis);
+        fireEvent.click(btnDis);
+        fireEvent.click(btnDis);
+        fireEvent.click(btnDis);
+        fireEvent.click(btnDis);
+        fireEvent.click(btnDis);
+        fireEvent.click(btnDis);
+
+        expect(screen.getByRole("counterRole").textContent).toContain("Counter: -7")
+    })
 })
