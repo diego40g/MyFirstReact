@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react"
 import Counter from "./Counter"
+import userEvent from "@testing-library/user-event";
 
 describe("<Counter />", () => {
     it("Pruebas de que el titulo y el estado del componente Counter se renderizan correctamente", () => {
@@ -26,5 +27,12 @@ describe("<Counter />", () => {
 
         fireEvent.click(btn)
         expect(screen.getByRole("counterRole").textContent).toContain("Counter: -1");
+    })
+
+    it("Verificar que el click vuelve al valor inicial", () => {
+        render(<Counter/>)
+
+        userEvent.click(screen.getByLabelText("reset"))
+        expect(screen.getByRole("counterRole").textContent).toContain("Counter: 0")
     })
 })
