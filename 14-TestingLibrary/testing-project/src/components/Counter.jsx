@@ -11,12 +11,17 @@ const Counter = () => {
     setCounter(counter-1)
   }
 
+  const handleReset = () => {
+    setCounter(0)
+  }
+
   return (
     <>
         <h2 data-testid="counter" role='counterRole'>Counter: {counter}</h2>
 
         <button onClick={handleAdd} aria-label='aumentar'>+1</button>
         <button onClick={handleDis} aria-label='disminuir'>-1</button>
+        <button onClick={handleReset} aria-label='reset'>Reset</button>
     </>
   )
 }
