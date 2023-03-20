@@ -1,4 +1,5 @@
 import { useCounter } from "../hooks/useCounter"
+import ButtonCounter from "./ButtonCounter"
 
 const Counter = () => {
   const {counter, handleModifyCounter, handleReset} = useCounter()
@@ -6,8 +7,9 @@ const Counter = () => {
     <>
         <h2 data-testid="counter" role='counterRole'>Counter: {counter}</h2>
 
-        <button onClick={()=>handleModifyCounter()} aria-label='aumentar'>+1</button>
-        <button onClick={()=> handleModifyCounter(-1)} aria-label='disminuir'>-1</button>
+        <ButtonCounter name='aumentar' action={handleModifyCounter}/>
+        <ButtonCounter name='disminuir' value={-1} action={handleModifyCounter} />
+        
         <button onClick={handleReset} aria-label='reset'>Reset</button>
     </>
   )
