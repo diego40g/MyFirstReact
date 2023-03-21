@@ -1,8 +1,12 @@
 import { render, screen } from "@testing-library/react"
-import ButtonCounter from "./ButtonCounter"
+import ButtonCounter from '../components/ButtonCounter'
 
-test("Prueba de rendirizar button counter", () => {
-    render(< ButtonCounter/>)
+describe('<ButtonCounter/>', () => { 
+    //SPY fucntion mocks
+    const action = jest.fn()
+    it('Crea un button correctamente', () => {
+        render(<ButtonCounter value={3} name={'aumentar'} action={action}/>)
 
-    expect(screen.getByText("1").tagName).toBe("BUTTON")
+        expect(screen.getByLabelText("aumentar")).toBeInTheDocument()
+    })
 })
