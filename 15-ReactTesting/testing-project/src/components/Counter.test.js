@@ -5,11 +5,14 @@ import userEvent from "@testing-library/user-event";
 describe("<Counter />", () => {
     render(<Counter />);
     
-    //beforEach(() => {}=
-
+    //beforEach(() => {})
 
     afterEach(() => {
         userEvent.click(screen.getByLabelText("reset"))
+    })
+
+    it("Primer snapshot", () => {
+        expect(screen.getByRole("counterRole")).toMatchSnapshot()
     })
 
     it("Pruebas de que el titulo y el estado del componente Counter se renderizan correctamente", () => {
