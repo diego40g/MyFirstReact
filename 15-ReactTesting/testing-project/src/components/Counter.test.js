@@ -3,9 +3,16 @@ import Counter from "./Counter"
 import userEvent from "@testing-library/user-event";
 
 describe("<Counter />", () => {
-    it("Pruebas de que el titulo y el estado del componente Counter se renderizan correctamente", () => {
-        render(<Counter />);
+    render(<Counter />);
     
+    //beforEach(() => {}=
+
+
+    afterEach(() => {
+        userEvent.click(screen.getByLabelText("reset"))
+    })
+
+    it("Pruebas de que el titulo y el estado del componente Counter se renderizan correctamente", () => {
         // console.log(wrapper.getByText("Counter: 0").tagName);
     
         //ACTUAL
