@@ -11,7 +11,7 @@ describe('<Container />', () => {
     it("Snapshot card imagen", async() => {
         render(<Cards />)
 
-        const response =await screen.findAllByLabelText("img")
+        const response = await screen.findAllByLabelText("img")
 
         //expect(response.length).toBe(10)
         expect(response).toHaveLength(10)
