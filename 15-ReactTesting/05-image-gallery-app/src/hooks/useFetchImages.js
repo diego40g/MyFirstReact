@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 
 export const useFetchImages = () => {
@@ -19,14 +20,16 @@ export const useFetchImages = () => {
 
     setLoading(true);
 
-    const res = await fetch(route);
+    const { data } = await axios.get(route);
 
-    const data = await res.json();
-
-    if (data.results) {
-      setImages(data.results);
+    if (data) {
+      if(data.results){
+        setImages(data.results);
+      }else{
+        setImages(data);
+      }
     } else {
-      setImages(data);
+      setImages([]);
     }
 
     setLoading(false);
