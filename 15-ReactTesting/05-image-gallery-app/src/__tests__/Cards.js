@@ -12,9 +12,9 @@ describe('<Container />', () => {
     })
 
     it("Snapshot card imagen", async() => {
+        axios.get = jest.fn().mockResolvedValue({ data: images })
         render(<Cards />)
 
-        axios.get = jest.fn().mockResolvedValue({ data: images })
         const response = await screen.findAllByLabelText("img")
 
         //expect(response.length).toBe(10)
