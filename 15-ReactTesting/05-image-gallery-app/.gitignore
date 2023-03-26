@@ -24,3 +24,10 @@ yarn-error.log*
 
 /public
 *.snap
+
+#testing
+/coverage
+/*/__test__
+/*/__mocks__
+*.test.js
+*.spec.js
