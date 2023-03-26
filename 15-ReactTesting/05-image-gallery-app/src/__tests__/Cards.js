@@ -1,5 +1,8 @@
 import { render, screen } from "@testing-library/react"
 import Cards from "../components/Cards"
+import axios from "axios"
+
+import { images } from "../__mocks__/images"
 
 describe('<Container />', () => { 
     it("Snapshot principal", () => {
@@ -11,6 +14,7 @@ describe('<Container />', () => {
     it("Snapshot card imagen", async() => {
         render(<Cards />)
 
+        axios.get = jest.fn().mockResolvedValue({ data: images })
         const response = await screen.findAllByLabelText("img")
 
         //expect(response.length).toBe(10)
